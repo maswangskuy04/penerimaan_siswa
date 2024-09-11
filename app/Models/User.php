@@ -20,7 +20,13 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'id_level'
     ];
+
+    public function levels()
+    {
+        return $this->belongsTo(Level::class, 'id_level');
+    }
 
     /**
      * The attributes that should be hidden for serialization.
